@@ -35,7 +35,7 @@ public class IPBitSet implements IBitSet {
 	}
 
 	private int getBitIndex(long nBit) {
-		return LONG_SIZE - (int)(nBit % LONG_SIZE);
+		return (int)(nBit % LONG_SIZE);
 	}
 
 	private static boolean checkBitValue(long word, int bitIndex) {
