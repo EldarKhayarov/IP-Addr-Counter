@@ -19,7 +19,6 @@ public class Reporter implements Runnable {
 				Thread.sleep(1000);
 				currentScannedIPCount = this.countsWrapper.getScannedCount();
 				timeSeconds++;
-				System.out.flush();
 				System.out.printf(
 						"Обработано %,d строк, а найдено %,d уникальных значений; скорость: %,d строк/сек; прошло %,d минут %d секунд\n",
 						currentScannedIPCount,
@@ -32,7 +31,6 @@ public class Reporter implements Runnable {
 			}
 		} catch (InterruptedException e) {
 			// После выполнения сканирования в главном потоке производится прерывание репортёра и вывод финальной строки.
-			System.out.flush();
 			System.out.printf(
 					"Обработка завершена за %,d минут %,d секунд. Найдено %,d уникальных значений из %,d обработанных строк.",
 					timeSeconds / 60,
